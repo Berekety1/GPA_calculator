@@ -26,10 +26,10 @@ bold = '\033[1m'
 
 logo = '''
 ''' + green + '''  ____ ____   _        ____   ___ _____ 
-''' + red + ''' / ___|  _ \ / \      | __ ) / _ \_   _|
-''' + cyan + '''| |  _| |_) / _ \     |  _ \| | | || |  
-''' + yellow + '''| |_| |  __/ ___ \    | |_) | |_| || |  
-''' + blue + ''' \____|_| /_/   \_\___|____/ \___/ |_| version [1.2] 
+''' + red + ''' / ___|  _ \\ / \\      | __ ) / _ \\_   _|
+''' + cyan + '''| |  _| |_) / _ \\     |  _ \\| | | || |  
+''' + yellow + '''| |_| |  __/ ___ \\    | |_) | |_| || |  
+''' + blue + ''' \\____|_| /_/   \\_\\___|____/ \\___/ |_| version [1.2] 
 ''' + purple + '''                 |_____|  Developed by [Bereket]                
 ''' + green + '''
 '''
@@ -170,7 +170,7 @@ def one_calc():
     slowprint(j)
     time.sleep(0.2)
     print('==============================================')
-    h = f'{blue}{bold}Your GPA is: {final_total}'
+    h = f'{blue}{bold}Your GPA is: {final_total:.2f}'
     slowprint(h)
     time.sleep(0.2)
     print('==============================================')
@@ -219,9 +219,9 @@ def one_calc():
     else:
        slowprint("\n"'Invalid Input')
     ask = input('do you want to calculate again? Yes/no: ')
-    if ask.lower == 'yes' or 'y':
+    if ask.lower() in ('yes', 'y'):
       main()
-    elif ask.lower == 'no' or 'n':
+    elif ask.lower() in ('no', 'n'):
       print('Good Bye')
     else:
       print ('invalid input' )
@@ -341,13 +341,13 @@ choose the calculate for one semester option from the home page.
        total_mark += total
        total_credit += hour 
        final_total = total / hour
-       C = "\n"f'{purple}{bold}Your GPA for this semester is : {final_total}'
+       C = "\n"f'{purple}{bold}Your GPA for this semester is : {final_total:.2f}'
        slowprint(C)
        print('==============================================')  
     final_cum_gpa = total_mark / total_credit
     D = "\n"f'{cyan}{bold}Your total point is : {total_mark}'
     E = "\n"f'{cyan}{bold}Your total credit hour is : {total_credit}'
-    Z = "\n"f'{blue}{bold}your cumulative GPA is : {final_cum_gpa} '
+    Z = "\n"f'{blue}{bold}your cumulative GPA is : {final_cum_gpa:.2f} '
 
     print("\n""\n""\n""\n""\n"f'{red}==============================================')
     l = f'{red}{bold}Name: {name.capitalize()}'
@@ -408,9 +408,9 @@ choose the calculate for one semester option from the home page.
        slowprint("\n"'Invalid Input')
 
     ask = input('do you want to calculate again? Yes/no: ')
-    if ask.lower == 'yes' or 'y':
+    if ask.lower() in ('yes', 'y'):
       main()
-    elif ask.lower == 'no' or 'n':
+    elif ask.lower() in ('no', 'n'):
       print('Good Bye')
     else:
       print ('invalid input' )
